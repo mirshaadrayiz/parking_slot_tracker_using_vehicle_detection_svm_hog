@@ -37,7 +37,7 @@ Image shape = (64,64,3)
 ![image](https://github.com/mirshaadrayiz/vehicle_detection_using_svm/assets/147004775/8c2d0fe7-fec3-455d-89f0-0c8c6414f97d)
 
 
-## DATA PREPARAION
+## DATA PREPARATION
 
 For diversity in dataset, data augmentation was performed. Data augmentation is however optional here as we have a vast amount of data for a simple classifier. 
 
@@ -94,3 +94,16 @@ ROC curves were generated to identify the impact of each feature extraction tech
 
 A model with accuracy **0.96** was obtained.
 
+## DISTANCE ESTIMATION
+
+If 2 vehicles are detected, the distance between them must be calculated. A program that could relate image pixels to real world distance is implemented. Perspective transformation, a technique that maps the points in the image to their corresponding locations in a transformed image. It also takes into account the perspective distortion that occurs when objects in 3D space are projected onto a 2D plane. The process involves applying a mathematical transformation (represented by a transformation matrix) to map the pixels in the image to their corresponding locations in a transformed image.
+
+For reference, perspective transform is first applied on the 3D image of a plain road to understand the relationship between the number of pixels in the image and real-world distances. With this the transformation matrix is obtained. It can be applied to the entire image to create a transformed image in which distances are more accurately represented. When two vehicles are detected in the same transformed image, the real world distance can be calculated by measuring the pixel distance and then applying the same transformation matrix.
+
+## CAMERA CALIBRATION
+
+Camera calibration is crucial for computer vision tasks estimating distances between objects in images. Calibration involves correction for lens distortion, identifying its intrinsic parameters etc. for enhanced accuracy in measurements. camera calibration was performed using a set of images of a chessboard pattern.
+
+## DATABASE AND LOCATION PINPOINTING
+
+If the gap between 2 vehicles satisfies the condition required for it to be a free slot, the location at which it was found should be entered into the database and also pinpointed on the google map visible for all other drivers in the system. The location coordinates (latitude and longitude) will be obtained using the GPS module connected to the system. Google Maps API along with the database conenction will be used to display the location on the map.
