@@ -1,4 +1,4 @@
-# vehicle_detection_using_svm
+# parking_slot_tracker_using_vehicle_detection_svm_hog
 
 ## OBJECTIVES
 
